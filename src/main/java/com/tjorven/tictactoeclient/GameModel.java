@@ -1,9 +1,11 @@
 package com.tjorven.tictactoeclient;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.Socket;
 
-public class GameModel {
+public class GameModel{
 
     private int[][] currentGameState = new int[3][3];
     private int currentPlayer;
@@ -21,12 +23,13 @@ public class GameModel {
 
     private Socket server;
     private String serverResponse;
+    private BufferedReader streamReader;
 
 
     int line;
 
-    public GameModel(int x, int y, GameController controller){
-        this.controller = controller;
+    public GameModel(int x, int y){
+        //this.controller = controller;
         //init();
         currentXSize = x;
         currentYSize = y;
@@ -102,6 +105,11 @@ public class GameModel {
 
     public void connect() throws IOException {
         server = new Socket(SERVER_ADDRESS, PORT);
+        streamReader = new BufferedReader(new InputStreamReader(server.getInputStream()));
+    }
+
+    public void setController(GameController controller) {
+        this.controller = controller;
     }
 
     private void printGameState(){

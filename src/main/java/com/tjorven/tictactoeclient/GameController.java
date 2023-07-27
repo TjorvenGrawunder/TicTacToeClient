@@ -9,7 +9,8 @@ import javafx.scene.shape.Rectangle;
 public class GameController {
 
 
-    private GameModel model = new GameModel(TicTacToeApp.getSTART_X(), TicTacToeApp.getSTART_Y(), this);
+    private GameModel model;
+            //= new GameModel(TicTacToeApp.getSTART_X(), TicTacToeApp.getSTART_Y(), this);
 
 
     @FXML
@@ -47,6 +48,9 @@ public class GameController {
     public Line up_down_2;
     public Line dia_0;
     public Line dia_1;
+    public GameController(GameModel model){
+        this.model = model;
+    }
 
     @FXML
     public void fieldClicked(javafx.scene.input.MouseEvent mouseEvent) {

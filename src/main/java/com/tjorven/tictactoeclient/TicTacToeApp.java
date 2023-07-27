@@ -12,6 +12,10 @@ public class TicTacToeApp extends Application {
     private static final int START_Y = 400;
     @Override
     public void start(Stage stage) throws IOException {
+        GameModel model = new GameModel(400, 400);
+        GameController controller = new GameController(model);
+        model.setController(controller);
+        model.connect();
         FXMLLoader fxmlLoader = new FXMLLoader(TicTacToeApp.class.getResource("gamepanel.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), START_X, START_Y);
         stage.setTitle("Hello!");
