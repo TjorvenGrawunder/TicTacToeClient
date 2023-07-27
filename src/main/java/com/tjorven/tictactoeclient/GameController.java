@@ -58,9 +58,15 @@ public class GameController {
     public void showWinner(int winner, int line){
         Alert winnerAlert = new Alert(Alert.AlertType.INFORMATION);
         winnerAlert.setTitle("Sieger");
-        winnerAlert.setContentText("Der Sieger ist Spieler " + winner);
+        if(winner == 0){
+            winnerAlert.setContentText("Es gibt keinen Sieger!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        }else{
+            winnerAlert.setContentText("Der Sieger ist Spieler " + winner);
+            showLine(line);
+        }
+
         winnerAlert.show();
-        showLine(line);
+
         //System.exit(0);
     }
 

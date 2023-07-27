@@ -1,5 +1,8 @@
 package com.tjorven.tictactoeclient;
 
+import java.io.IOException;
+import java.net.Socket;
+
 public class GameModel {
 
     private int[][] currentGameState = new int[3][3];
@@ -10,13 +13,21 @@ public class GameModel {
     private int currentXSize;
     private int currentYSize;
     private int winner = 0;
+    private int turn = 0;
     private boolean won = false;
+
+    private static final String SERVER_ADDRESS = "localhost";
+    private static final int PORT = 8080;
+
+    private Socket server;
+    private String serverResponse;
+
 
     int line;
 
     public GameModel(int x, int y, GameController controller){
         this.controller = controller;
-        init();
+        //init();
         currentXSize = x;
         currentYSize = y;
     }
@@ -31,7 +42,7 @@ public class GameModel {
     }
 
     public void nextPlayer(){
-        if(winner == 0) {
+        if(winner == 0 && turn < 9) {
             if (currentPlayer == 1) {
                 currentPlayer = 2;
             } else if (currentPlayer == 2) {
@@ -40,7 +51,7 @@ public class GameModel {
                 throw new RuntimeException("Kein Spieler ist momentan am Zug!");
             }
         }else{
-            printGameState();
+            //printGameState();
             controller.showWinner(winner, line);
         }
     }
@@ -50,11 +61,12 @@ public class GameModel {
             int col = (int) x / (currentXSize / 3);
             int row = (int) y / (currentYSize / 3);
             if (currentGameState[row][col] == 0) {
-                System.out.println("Player: " + currentPlayer + " col: " + col + " row: " + row);
+                //System.out.println("Player: " + currentPlayer + " col: " + col + " row: " + row);
                 currentGameState[row][col] = currentPlayer;
                 //printGameState();
                 controller.showClickedField(currentPlayer, col, row);
                 checkWin();
+                turn++;
                 nextPlayer();
             }
         }
@@ -86,6 +98,10 @@ public class GameModel {
             line = 7;
             won = true;
         }
+    }
+
+    public void connect() throws IOException {
+        server = new Socket(SERVER_ADDRESS, PORT);
     }
 
     private void printGameState(){
