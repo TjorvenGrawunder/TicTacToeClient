@@ -5,12 +5,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 
 public class GameController {
 
 
-    private GameModel model;
-            //= new GameModel(TicTacToeApp.getSTART_X(), TicTacToeApp.getSTART_Y(), this);
+    private GameModel model = new GameModel(TicTacToeApp.getSTART_X(), TicTacToeApp.getSTART_Y(), this);
 
 
     @FXML
@@ -31,26 +31,41 @@ public class GameController {
     private Circle circle_1_2;
     @FXML
     private Circle circle_2_2;
-    public Rectangle rectangle_0_0;
-    public Rectangle rectangle_1_0;
-    public Rectangle rectangle_2_0;
-    public Rectangle rectangle_0_1;
-    public Rectangle rectangle_1_1;
-    public Rectangle rectangle_2_1;
-    public Rectangle rectangle_0_2;
-    public Rectangle rectangle_1_2;
-    public Rectangle rectangle_2_2;
-    public Line right_left_0;
-    public Line right_left_1;
-    public Line right_left_2;
-    public Line up_down_0;
-    public Line up_down_1;
-    public Line up_down_2;
-    public Line dia_0;
-    public Line dia_1;
-    public GameController(GameModel model){
-        this.model = model;
-    }
+    @FXML
+    private Text x_0_0;
+    @FXML
+    private Text x_1_0;
+    @FXML
+    private Text x_2_0;
+    @FXML
+    private Text x_0_1;
+    @FXML
+    private Text x_1_1;
+    @FXML
+    private Text x_2_1;
+    @FXML
+    private Text x_0_2;
+    @FXML
+    private Text x_1_2;
+    @FXML
+    private Text x_2_2;
+    @FXML
+    private Line right_left_0;
+    @FXML
+    private Line right_left_1;
+    @FXML
+    private Line right_left_2;
+    @FXML
+    private Line up_down_0;
+    @FXML
+    private Line up_down_1;
+    @FXML
+    private Line up_down_2;
+    @FXML
+    private Line dia_0;
+    @FXML
+    private Line dia_1;
+
 
     @FXML
     public void fieldClicked(javafx.scene.input.MouseEvent mouseEvent) {
@@ -103,23 +118,23 @@ public class GameController {
             switch (row){
                 case 0:
                     switch (col) {
-                        case 0 -> rectangle_0_0.setVisible(true);
-                        case 1 -> rectangle_0_1.setVisible(true);
-                        case 2 -> rectangle_0_2.setVisible(true);
+                        case 0 -> x_0_0.setVisible(true);
+                        case 1 -> x_0_1.setVisible(true);
+                        case 2 -> x_0_2.setVisible(true);
                     }
                     break;
                 case 1:
                     switch (col) {
-                        case 0 -> rectangle_1_0.setVisible(true);
-                        case 1 -> rectangle_1_1.setVisible(true);
-                        case 2 -> rectangle_1_2.setVisible(true);
+                        case 0 -> x_1_0.setVisible(true);
+                        case 1 -> x_1_1.setVisible(true);
+                        case 2 -> x_1_2.setVisible(true);
                     }
                     break;
                 case 2:
                     switch (col) {
-                        case 0 -> rectangle_2_0.setVisible(true);
-                        case 1 -> rectangle_2_1.setVisible(true);
-                        case 2 -> rectangle_2_2.setVisible(true);
+                        case 0 -> x_2_0.setVisible(true);
+                        case 1 -> x_2_1.setVisible(true);
+                        case 2 -> x_2_2.setVisible(true);
                     }
                     break;
             }
@@ -153,5 +168,9 @@ public class GameController {
                 dia_1.setVisible(true);
                 break;
         }
+    }
+
+    public void setModel(GameModel model) {
+        this.model = model;
     }
 }

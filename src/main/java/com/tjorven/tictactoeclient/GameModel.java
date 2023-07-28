@@ -28,9 +28,9 @@ public class GameModel{
 
     int line;
 
-    public GameModel(int x, int y){
-        //this.controller = controller;
-        //init();
+    public GameModel(int x, int y, GameController controller){
+        this.controller = controller;
+        init();
         currentXSize = x;
         currentYSize = y;
     }
@@ -103,10 +103,6 @@ public class GameModel{
         }
     }
 
-    public void connect() throws IOException {
-        server = new Socket(SERVER_ADDRESS, PORT);
-        streamReader = new BufferedReader(new InputStreamReader(server.getInputStream()));
-    }
 
     public void setController(GameController controller) {
         this.controller = controller;

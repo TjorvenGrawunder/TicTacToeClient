@@ -2,6 +2,7 @@ package com.tjorven.tictactoeclient;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -12,11 +13,9 @@ public class TicTacToeApp extends Application {
     private static final int START_Y = 400;
     @Override
     public void start(Stage stage) throws IOException {
-        GameModel model = new GameModel(400, 400);
-        GameController controller = new GameController(model);
-        model.setController(controller);
-        model.connect();
+        GameController controller = new GameController();
         FXMLLoader fxmlLoader = new FXMLLoader(TicTacToeApp.class.getResource("gamepanel.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("gamepanel.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), START_X, START_Y);
         stage.setTitle("Hello!");
         stage.setScene(scene);
