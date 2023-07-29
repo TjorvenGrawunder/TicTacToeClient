@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Switched to Netty Client. Deleted module-info.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Fixed FXML Load Error">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/connectWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/gamepanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/gamepanel.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -98,7 +98,9 @@
       <workItem from="1690479195695" duration="1993000" />
       <workItem from="1690485270830" duration="4928000" />
       <workItem from="1690568520343" duration="3526000" />
-      <workItem from="1690575751968" duration="1251000" />
+      <workItem from="1690575751968" duration="1563000" />
+      <workItem from="1690638247692" duration="212000" />
+      <workItem from="1690638469738" duration="1963000" />
     </task>
     <task id="LOCAL-00001" summary="Server parsing implemented. Started Client function">
       <created>1690479251130</created>
@@ -114,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690492234897</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed FXML Load Error">
+      <created>1690577299678</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690577299678</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,17 +143,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Server parsing implemented. Started Client function" />
     <MESSAGE value="Switched to Netty Client. Deleted module-info.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switched to Netty Client. Deleted module-info.java" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fixed FXML Load Error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed FXML Load Error" />
   </component>
 </project>

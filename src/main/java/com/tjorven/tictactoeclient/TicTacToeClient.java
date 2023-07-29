@@ -5,17 +5,20 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
 
 public class TicTacToeClient {
-    private String host;
-    private int port;
+    private final String HOST;
+    private final int PORT;
+    private Channel msgChannel;
 
     public TicTacToeClient(String host, int port){
-        this.host = host;
-        this.port = port;
+        this.HOST = host;
+        this.PORT = port;
     }
 
-    public void start() throws InterruptedException {
+    public void start(String userName) throws InterruptedException {
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
         try{
@@ -25,12 +28,14 @@ public class TicTacToeClient {
             b.option(ChannelOption.SO_KEEPALIVE, true);
             b.handler(new ChannelInitializer<SocketChannel>() {
                 @Override
-                protected void initChannel(SocketChannel socketChannel) throws Exception {
-                    socketChannel.pipeline().addLast(new TicTacToeClientHandler());
+                protected void initChannel(SocketChannel socketChannel) {
+                    socketChannel.pipeline().addLast(new StringDecoder(), new StringEncoder(),new TicTacToeClientHandler());
                 }
             });
 
-            ChannelFuture f = b.connect(host, port).sync();
+            ChannelFuture f = b.connect(HOST, PORT).sync();
+            msgChannel = f.channel();
+            msgChannel.writeAndFlush("Test Message");
 
             f.channel().closeFuture().sync();
         } finally{
@@ -38,11 +43,4 @@ public class TicTacToeClient {
         }
     }
 
-    public static void main(String[] args){
-        try {
-            new TicTacToeClient("87.161.26.237",8080).start();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }

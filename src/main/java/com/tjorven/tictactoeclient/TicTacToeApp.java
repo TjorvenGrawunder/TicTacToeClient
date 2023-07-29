@@ -13,8 +13,8 @@ public class TicTacToeApp extends Application {
     private static final int START_Y = 400;
     @Override
     public void start(Stage stage) throws IOException {
-        GameController controller = new GameController();
-        FXMLLoader fxmlLoader = new FXMLLoader(TicTacToeApp.class.getResource("gamepanel.fxml"));
+        //FXMLLoader fxmlLoader = new FXMLLoader(TicTacToeApp.class.getResource("gamepanel.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(TicTacToeApp.class.getResource("connectWindow.fxml"));
         //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("gamepanel.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), START_X, START_Y);
         stage.setTitle("Hello!");
