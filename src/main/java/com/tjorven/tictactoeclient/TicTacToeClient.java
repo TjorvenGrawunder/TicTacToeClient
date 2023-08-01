@@ -35,7 +35,6 @@ public class TicTacToeClient implements Runnable{
 
             ChannelFuture f = b.connect(HOST, PORT).sync();
             msgChannel = f.channel();
-            msgChannel.writeAndFlush("Test Message");
 
             f.channel().closeFuture().sync();
         } finally{

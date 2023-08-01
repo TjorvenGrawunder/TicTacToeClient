@@ -15,4 +15,14 @@ public class TicTacToeClientHandler extends ChannelInboundHandlerAdapter {
         cause.printStackTrace();
         ctx.close();
     }
+
+    private void interpret(String msg){
+        String[] msgParts = msg.split(",");
+
+        switch (msgParts[0]){
+            case "draw":
+
+                break;
+        }
+    }
 }

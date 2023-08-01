@@ -75,8 +75,7 @@ public class GameController {
         double x = mouseEvent.getX();
         double y = mouseEvent.getY();
         model.makeMove(x, y);
-        Channel msgChannel = client.getMsgChannel();
-        msgChannel.writeAndFlush("clicked on: " + x + ", " + y);
+
     }
 
     public void showWinner(int winner, int line){
@@ -175,8 +174,8 @@ public class GameController {
         }
     }
 
-    public void setModel(GameModel model) {
-        this.model = model;
+    public GameModel getModel() {
+        return this.model;
     }
 
     public void setClient(TicTacToeClient client) {

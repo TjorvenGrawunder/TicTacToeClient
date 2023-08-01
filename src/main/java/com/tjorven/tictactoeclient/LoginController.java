@@ -13,7 +13,7 @@ public class LoginController {
     public void connectToServer(MouseEvent mouseEvent) {
         new Thread(client).start();
         GameController gameController = application.switchToGame();
-        gameController.setClient(client);
+        gameController.getModel().setClient(client);
     }
 
     public void setApplication(TicTacToeApp application) {

@@ -1,5 +1,7 @@
 package com.tjorven.tictactoeclient;
 
+import io.netty.channel.Channel;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,12 +20,7 @@ public class GameModel{
     private int turn = 0;
     private boolean won = false;
 
-    private static final String SERVER_ADDRESS = "localhost";
-    private static final int PORT = 8080;
-
-    private Socket server;
-    private String serverResponse;
-    private BufferedReader streamReader;
+    TicTacToeClient client;
 
 
     int line;
@@ -63,7 +60,9 @@ public class GameModel{
         if(!won) {
             int col = (int) x / (currentXSize / 3);
             int row = (int) y / (currentYSize / 3);
-            if (currentGameState[row][col] == 0) {
+            Channel msgChannel = client.getMsgChannel();
+            msgChannel.writeAndFlush("clickedOn," + row + "," + col);
+            /*if (currentGameState[row][col] == 0) {
                 //System.out.println("Player: " + currentPlayer + " col: " + col + " row: " + row);
                 currentGameState[row][col] = currentPlayer;
                 //printGameState();
@@ -71,7 +70,7 @@ public class GameModel{
                 checkWin();
                 turn++;
                 nextPlayer();
-            }
+            }*/
         }
     }
 
@@ -103,9 +102,8 @@ public class GameModel{
         }
     }
 
-
-    public void setController(GameController controller) {
-        this.controller = controller;
+    public void setClient(TicTacToeClient client) {
+        this.client = client;
     }
 
     private void printGameState(){

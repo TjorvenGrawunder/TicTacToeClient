@@ -7,9 +7,10 @@
     <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="New connectWindow.fxml and sending a test message to server that comes back">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClientHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +54,7 @@
   <component name="RunManager" selected="Application.TicTacToeApp">
     <configuration name="TicTacToeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.tjorven.tictactoeclient.TicTacToeApp" />
-      <module name="TicTacToeOnline" />
+      <module name="TicTacToeClient" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.tjorven.tictactoeclient.*" />
@@ -102,6 +103,8 @@
       <workItem from="1690638247692" duration="212000" />
       <workItem from="1690638469738" duration="2192000" />
       <workItem from="1690878432095" duration="1456000" />
+      <workItem from="1690888252768" duration="1229000" />
+      <workItem from="1690895880159" duration="2011000" />
     </task>
     <task id="LOCAL-00001" summary="Server parsing implemented. Started Client function">
       <created>1690479251130</created>
