@@ -7,12 +7,16 @@ import javafx.scene.input.MouseEvent;
 public class LoginController {
     @FXML
     public Label userField;
+
+    TicTacToeApp application;
     TicTacToeClient client = new TicTacToeClient("localhost", 8080);
     public void connectToServer(MouseEvent mouseEvent) {
-        try {
-            client.start(userField.getText());
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        new Thread(client).start();
+        GameController gameController = application.switchToGame();
+        gameController.setClient(client);
+    }
+
+    public void setApplication(TicTacToeApp application) {
+        this.application = application;
     }
 }

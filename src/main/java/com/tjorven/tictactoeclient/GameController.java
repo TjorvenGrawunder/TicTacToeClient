@@ -1,5 +1,6 @@
 package com.tjorven.tictactoeclient;
 
+import io.netty.channel.Channel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.shape.Circle;
@@ -66,12 +67,16 @@ public class GameController {
     @FXML
     private Line dia_1;
 
+    TicTacToeClient client;
+
 
     @FXML
     public void fieldClicked(javafx.scene.input.MouseEvent mouseEvent) {
         double x = mouseEvent.getX();
         double y = mouseEvent.getY();
         model.makeMove(x, y);
+        Channel msgChannel = client.getMsgChannel();
+        msgChannel.writeAndFlush("clicked on: " + x + ", " + y);
     }
 
     public void showWinner(int winner, int line){
@@ -172,5 +177,9 @@ public class GameController {
 
     public void setModel(GameModel model) {
         this.model = model;
+    }
+
+    public void setClient(TicTacToeClient client) {
+        this.client = client;
     }
 }

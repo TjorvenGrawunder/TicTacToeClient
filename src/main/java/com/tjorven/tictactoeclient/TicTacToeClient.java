@@ -8,7 +8,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
-public class TicTacToeClient {
+public class TicTacToeClient implements Runnable{
     private final String HOST;
     private final int PORT;
     private Channel msgChannel;
@@ -18,7 +18,7 @@ public class TicTacToeClient {
         this.PORT = port;
     }
 
-    public void start(String userName) throws InterruptedException {
+    public void start() throws InterruptedException {
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
         try{
@@ -43,4 +43,16 @@ public class TicTacToeClient {
         }
     }
 
+    @Override
+    public void run() {
+        try {
+            start();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Channel getMsgChannel() {
+        return msgChannel;
+    }
 }

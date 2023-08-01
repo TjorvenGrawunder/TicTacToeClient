@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Fixed FXML Load Error">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/connectWindow.fxml" afterDir="false" />
+    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="New connectWindow.fxml and sending a test message to server that comes back">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClient.java" afterDir="false" />
     </list>
@@ -100,7 +100,8 @@
       <workItem from="1690568520343" duration="3526000" />
       <workItem from="1690575751968" duration="1563000" />
       <workItem from="1690638247692" duration="212000" />
-      <workItem from="1690638469738" duration="1963000" />
+      <workItem from="1690638469738" duration="2192000" />
+      <workItem from="1690878432095" duration="1456000" />
     </task>
     <task id="LOCAL-00001" summary="Server parsing implemented. Started Client function">
       <created>1690479251130</created>
@@ -123,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690577299678</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="New connectWindow.fxml and sending a test message to server that comes back">
+      <created>1690640764629</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690640764629</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +152,7 @@
     <MESSAGE value="Server parsing implemented. Started Client function" />
     <MESSAGE value="Switched to Netty Client. Deleted module-info.java" />
     <MESSAGE value="Fixed FXML Load Error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed FXML Load Error" />
+    <MESSAGE value="New connectWindow.fxml and sending a test message to server that comes back" />
+    <option name="LAST_COMMIT_MESSAGE" value="New connectWindow.fxml and sending a test message to server that comes back" />
   </component>
 </project>
