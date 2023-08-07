@@ -12,6 +12,7 @@ public class TicTacToeClient implements Runnable{
     private final String HOST;
     private final int PORT;
     private Channel msgChannel;
+    private GameModel model;
 
     public TicTacToeClient(String host, int port){
         this.HOST = host;
@@ -29,7 +30,7 @@ public class TicTacToeClient implements Runnable{
             b.handler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 protected void initChannel(SocketChannel socketChannel) {
-                    socketChannel.pipeline().addLast(new StringDecoder(), new StringEncoder(),new TicTacToeClientHandler());
+                    socketChannel.pipeline().addLast(new StringDecoder(), new StringEncoder(),new TicTacToeClientHandler(model));
                 }
             });
 
@@ -53,5 +54,9 @@ public class TicTacToeClient implements Runnable{
 
     public Channel getMsgChannel() {
         return msgChannel;
+    }
+
+    public void setModel(GameModel model) {
+        this.model = model;
     }
 }

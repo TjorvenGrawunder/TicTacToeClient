@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="New connectWindow.fxml and sending a test message to server that comes back">
+    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Communication to Server from Client with Coords of Mouseclick">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" afterDir="false" />
@@ -54,7 +54,7 @@
   <component name="RunManager" selected="Application.TicTacToeApp">
     <configuration name="TicTacToeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.tjorven.tictactoeclient.TicTacToeApp" />
-      <module name="TicTacToeClient" />
+      <module name="TicTacToeOnline" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.tjorven.tictactoeclient.*" />

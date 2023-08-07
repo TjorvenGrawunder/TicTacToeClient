@@ -21,6 +21,7 @@ public class GameModel{
     private boolean won = false;
 
     TicTacToeClient client;
+    Channel msgChannel;
 
 
     int line;
@@ -57,10 +58,10 @@ public class GameModel{
     }
 
     public void makeMove(double x, double y){
-        if(!won) {
+        //if(!won) {
             int col = (int) x / (currentXSize / 3);
             int row = (int) y / (currentYSize / 3);
-            Channel msgChannel = client.getMsgChannel();
+            msgChannel = client.getMsgChannel();
             msgChannel.writeAndFlush("clickedOn," + row + "," + col);
             /*if (currentGameState[row][col] == 0) {
                 //System.out.println("Player: " + currentPlayer + " col: " + col + " row: " + row);
@@ -71,7 +72,7 @@ public class GameModel{
                 turn++;
                 nextPlayer();
             }*/
-        }
+        //}
     }
 
     private void checkWin(){
@@ -99,6 +100,19 @@ public class GameModel{
             winner = currentGameState[0][2]; // Nebendiagonale gewinnt
             line = 7;
             won = true;
+        }
+    }
+
+    public void interpret(String msg){
+        String[] msgParts = msg.split(",");
+
+        switch (msgParts[0]){
+            case "draw":
+                controller.showClickedField(Integer.parseInt(msgParts[4]),Integer.parseInt(msgParts[2]),Integer.parseInt(msgParts[1]));
+                if(msgParts[3].equals("true")){
+                    controller.showWinner(Integer.parseInt(msgParts[5]), Integer.parseInt(msgParts[6]));
+                }
+                break;
         }
     }
 

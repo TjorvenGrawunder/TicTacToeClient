@@ -4,9 +4,18 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
 public class TicTacToeClientHandler extends ChannelInboundHandlerAdapter {
+
+    GameModel model;
+
+    public TicTacToeClientHandler(GameModel model) {
+        super();
+        this.model = model;
+    }
+
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println(msg);
+        model.interpret((String) msg);
         System.out.flush();
     }
 
@@ -16,13 +25,9 @@ public class TicTacToeClientHandler extends ChannelInboundHandlerAdapter {
         ctx.close();
     }
 
-    private void interpret(String msg){
-        String[] msgParts = msg.split(",");
 
-        switch (msgParts[0]){
-            case "draw":
 
-                break;
-        }
+    public void setModel(GameModel model) {
+        this.model = model;
     }
 }

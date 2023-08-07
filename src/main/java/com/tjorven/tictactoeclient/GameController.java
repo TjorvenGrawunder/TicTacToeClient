@@ -1,6 +1,7 @@
 package com.tjorven.tictactoeclient;
 
 import io.netty.channel.Channel;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.shape.Circle;
@@ -79,16 +80,22 @@ public class GameController {
     }
 
     public void showWinner(int winner, int line){
-        Alert winnerAlert = new Alert(Alert.AlertType.INFORMATION);
-        winnerAlert.setTitle("Sieger");
-        if(winner == 0){
-            winnerAlert.setContentText("Es gibt keinen Sieger!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        }else{
-            winnerAlert.setContentText("Der Sieger ist Spieler " + winner);
-            showLine(line);
-        }
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                Alert winnerAlert = new Alert(Alert.AlertType.INFORMATION);
+                winnerAlert.setTitle("Sieger");
+                if(winner == 0){
+                    winnerAlert.setContentText("Es gibt keinen Sieger!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                }else{
+                    winnerAlert.setContentText("Der Sieger ist Spieler " + winner);
+                    showLine(line);
+                }
 
-        winnerAlert.show();
+                winnerAlert.show();
+            }
+        });
+
 
         //System.exit(0);
     }

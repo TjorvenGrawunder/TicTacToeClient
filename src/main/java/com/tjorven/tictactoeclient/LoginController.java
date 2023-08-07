@@ -14,6 +14,7 @@ public class LoginController {
         new Thread(client).start();
         GameController gameController = application.switchToGame();
         gameController.getModel().setClient(client);
+        client.setModel(gameController.getModel());
     }
 
     public void setApplication(TicTacToeApp application) {
