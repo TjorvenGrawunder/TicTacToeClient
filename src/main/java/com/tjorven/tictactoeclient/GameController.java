@@ -80,20 +80,17 @@ public class GameController {
     }
 
     public void showWinner(int winner, int line){
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                Alert winnerAlert = new Alert(Alert.AlertType.INFORMATION);
-                winnerAlert.setTitle("Sieger");
-                if(winner == 0){
-                    winnerAlert.setContentText("Es gibt keinen Sieger!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                }else{
-                    winnerAlert.setContentText("Der Sieger ist Spieler " + winner);
-                    showLine(line);
-                }
-
-                winnerAlert.show();
+        Platform.runLater(() -> {
+            Alert winnerAlert = new Alert(Alert.AlertType.INFORMATION);
+            winnerAlert.setTitle("Sieger");
+            if(winner == 0){
+                winnerAlert.setContentText("Es gibt keinen Sieger!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }else{
+                winnerAlert.setContentText("Der Sieger ist Spieler " + winner);
+                showLine(line);
             }
+
+            winnerAlert.show();
         });
 
 
