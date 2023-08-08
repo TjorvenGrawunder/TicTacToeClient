@@ -28,7 +28,7 @@ public class GameModel{
 
     public GameModel(int x, int y, GameController controller){
         this.controller = controller;
-        init();
+        //init();
         currentXSize = x;
         currentYSize = y;
     }
