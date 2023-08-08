@@ -9,7 +9,14 @@
    <items>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
-          <Button mnemonicParsing="false" text="Button" />
+            <Region styleClass="space" />
+            <HBox styleClass="segmented-button-bar">
+                <Button text="Button" styleClass="first"/>
+                <Button text="Button2"/>
+                <Button text="Button3"/>
+                <Button text="Button4" styleClass="last"/>
+
+            </HBox>
         </items>
       </ToolBar>
       <GridPane gridLinesVisible="true" maxHeight="400.0" maxWidth="400.0" minHeight="400.0" minWidth="400.0" onMousePressed="#fieldClicked" prefHeight="400.0" prefWidth="400.0">
