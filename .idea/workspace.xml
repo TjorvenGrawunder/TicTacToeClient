@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Show clicked Field and Winner.&#10;TO-DO: Stop Game after someone won">
+    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Player ID for every Client">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/gameWindow.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/connectWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/connectWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/gamepanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/gamepanel.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +22,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -33,24 +38,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "list.type.of.created.stylesheet": "CSS",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.TicTacToeApp">
     <configuration name="TicTacToeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.tjorven.tictactoeclient.TicTacToeApp" />
-      <module name="TicTacToeOnline" />
+      <module name="TicTacToeClient" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.tjorven.tictactoeclient.*" />
@@ -102,6 +108,7 @@
       <workItem from="1690888252768" duration="1229000" />
       <workItem from="1690895880159" duration="2011000" />
       <workItem from="1691493995312" duration="2863000" />
+      <workItem from="1691506591224" duration="347000" />
     </task>
     <task id="LOCAL-00001" summary="Server parsing implemented. Started Client function">
       <created>1690479251130</created>
@@ -138,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691414864505</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Player ID for every Client">
+      <created>1691500432899</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1691500432899</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +175,7 @@
     <MESSAGE value="Fixed FXML Load Error" />
     <MESSAGE value="New connectWindow.fxml and sending a test message to server that comes back" />
     <MESSAGE value="Show clicked Field and Winner.&#10;TO-DO: Stop Game after someone won" />
-    <option name="LAST_COMMIT_MESSAGE" value="Show clicked Field and Winner.&#10;TO-DO: Stop Game after someone won" />
+    <MESSAGE value="Player ID for every Client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Player ID for every Client" />
   </component>
 </project>

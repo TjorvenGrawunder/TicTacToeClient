@@ -15,8 +15,10 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label fx:id="userField" text="Username:" translateX="-10.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-      <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label fx:id="userField" text="Username:" translateX="-10.0" translateY="-20.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <TextField fx:id="userNameField" text="User" translateY="-20.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Button mnemonicParsing="false" onMouseClicked="#connectToServer" text="Play" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Label text="IP-Adresse:" translateX="-10.0" translateY="20.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <TextField fx:id="ipAdressField" text="localhost" translateY="20.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
    </children>
 </GridPane>
