@@ -2,8 +2,10 @@ package com.tjorven.tictactoeclient;
 
 import io.netty.channel.Channel;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
@@ -12,8 +14,11 @@ import javafx.scene.text.Text;
 public class GameController {
 
 
+    public Button restartButton;
+    public Button quitButton;
     private GameModel model = new GameModel(TicTacToeApp.getSTART_X(), TicTacToeApp.getSTART_Y(), this);
 
+    private TicTacToeApp application;
 
     @FXML
     private Circle circle_0_0;
@@ -78,6 +83,16 @@ public class GameController {
         model.makeMove(x, y);
 
     }
+    @FXML
+    public void restartGame(ActionEvent actionEvent) {
+        model.restart();
+    }
+    @FXML
+    public void quitGame(ActionEvent actionEvent) {
+
+    }
+
+
 
     public void showWinner(int winner, int line){
         Platform.runLater(() -> {
@@ -178,11 +193,21 @@ public class GameController {
         }
     }
 
+    public void resetField(){
+        Platform.runLater(() -> application.switchToGame());
+    }
+
     public GameModel getModel() {
         return this.model;
+    }
+
+    public void setApplication(TicTacToeApp application) {
+        this.application = application;
     }
 
     public void setClient(TicTacToeClient client) {
         this.client = client;
     }
+
+
 }

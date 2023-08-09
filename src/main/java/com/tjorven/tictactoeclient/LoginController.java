@@ -18,6 +18,7 @@ public class LoginController {
         new Thread(client).start();
         GameController gameController = application.switchToGame();
         gameController.getModel().setClient(client);
+        gameController.setApplication(application);
         client.setModel(gameController.getModel());
     }
 

@@ -11,10 +11,10 @@
         <items>
             <Region styleClass="space" />
             <HBox styleClass="segmented-button-bar">
-                <Button text="Button" styleClass="first"/>
-                <Button text="Button2"/>
-                <Button text="Button3"/>
-                <Button text="Button4" styleClass="last"/>
+                <Button fx:id="restartButton" onAction="#restartGame" styleClass="first" text="Restart" />
+                <Button fx:id="quitButton" onAction="#quitGame" text="Quit" />
+                <Button text="Button3" />
+                <Button styleClass="last" text="Button4" />
 
             </HBox>
         </items>

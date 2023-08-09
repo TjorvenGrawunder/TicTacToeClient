@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Player ID for every Client">
+    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Manchmal denkt man, dass man ne Eingebung hat, aber dann hat man doch keine. #Bruch">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/gamepanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/gamepanel.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,6 +109,7 @@
       <workItem from="1690895880159" duration="2011000" />
       <workItem from="1691493995312" duration="2863000" />
       <workItem from="1691506591224" duration="347000" />
+      <workItem from="1691583963746" duration="1195000" />
     </task>
     <task id="LOCAL-00001" summary="Server parsing implemented. Started Client function">
       <created>1690479251130</created>
@@ -147,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691500432899</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Manchmal denkt man, dass man ne Eingebung hat, aber dann hat man doch keine. #Bruch">
+      <created>1691531760059</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1691531760059</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +184,7 @@
     <MESSAGE value="New connectWindow.fxml and sending a test message to server that comes back" />
     <MESSAGE value="Show clicked Field and Winner.&#10;TO-DO: Stop Game after someone won" />
     <MESSAGE value="Player ID for every Client" />
-    <option name="LAST_COMMIT_MESSAGE" value="Player ID for every Client" />
+    <MESSAGE value="Manchmal denkt man, dass man ne Eingebung hat, aber dann hat man doch keine. #Bruch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Manchmal denkt man, dass man ne Eingebung hat, aber dann hat man doch keine. #Bruch" />
   </component>
 </project>

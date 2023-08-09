@@ -37,7 +37,7 @@ public class TicTacToeApp extends Application {
             throw new RuntimeException(e);
         }
         Scene scene = new Scene(root, START_X, START_Y + 40);
-        scene.getStylesheets().add(getClass().getResource("gameWindow.css").toExternalForm());
+        //scene.getStylesheets().add(getClass().getResource("gameWindow.css").toExternalForm());
         mainStage.setScene(scene);
 
         return fxmlLoader.getController();

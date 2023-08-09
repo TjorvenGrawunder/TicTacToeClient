@@ -35,6 +35,11 @@ public class GameModel{
         msgChannel.writeAndFlush("clickedOn," + row + "," + col + "," + yourPlayer);
     }
 
+    public void restart(){
+        msgChannel = client.getMsgChannel();
+        msgChannel.writeAndFlush("restart");
+    }
+
     public void interpret(String msg){
         String[] msgParts = msg.split(",");
 
@@ -47,6 +52,9 @@ public class GameModel{
                 break;
             case "setPlayer":
                 yourPlayer = Integer.parseInt(msgParts[1]);
+                break;
+            case "restart":
+                controller.resetField();
                 break;
             default:
                 break;
