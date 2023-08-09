@@ -45,7 +45,7 @@ public class GameModel{
 
         switch (msgParts[0]){
             case "draw":
-                controller.showClickedField(Integer.parseInt(msgParts[4]),Integer.parseInt(msgParts[2]),Integer.parseInt(msgParts[1]));
+                controller.showClickedField(Integer.parseInt(msgParts[4]),Integer.parseInt(msgParts[2]),Integer.parseInt(msgParts[1]), true);
                 if(msgParts[3].equals("true")){
                     controller.showWinner(Integer.parseInt(msgParts[5]), Integer.parseInt(msgParts[6]));
                 }

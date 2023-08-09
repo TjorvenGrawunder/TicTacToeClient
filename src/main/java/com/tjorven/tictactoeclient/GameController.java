@@ -112,28 +112,28 @@ public class GameController {
         //System.exit(0);
     }
 
-    public void showClickedField(int player, int row, int col){
+    public void showClickedField(int player, int row, int col, boolean visibility){
         if(player == 1){
             switch (row){
                 case 0:
                     switch (col) {
-                        case 0 -> circle_0_0.setVisible(true);
-                        case 1 -> circle_0_1.setVisible(true);
-                        case 2 -> circle_0_2.setVisible(true);
+                        case 0 -> circle_0_0.setVisible(visibility);
+                        case 1 -> circle_0_1.setVisible(visibility);
+                        case 2 -> circle_0_2.setVisible(visibility);
                     }
                     break;
                 case 1:
                     switch (col) {
-                        case 0 -> circle_1_0.setVisible(true);
-                        case 1 -> circle_1_1.setVisible(true);
-                        case 2 -> circle_1_2.setVisible(true);
+                        case 0 -> circle_1_0.setVisible(visibility);
+                        case 1 -> circle_1_1.setVisible(visibility);
+                        case 2 -> circle_1_2.setVisible(visibility);
                     }
                     break;
                 case 2:
                     switch (col) {
-                        case 0 -> circle_2_0.setVisible(true);
-                        case 1 -> circle_2_1.setVisible(true);
-                        case 2 -> circle_2_2.setVisible(true);
+                        case 0 -> circle_2_0.setVisible(visibility);
+                        case 1 -> circle_2_1.setVisible(visibility);
+                        case 2 -> circle_2_2.setVisible(visibility);
                     }
                     break;
             }
@@ -141,23 +141,23 @@ public class GameController {
             switch (row){
                 case 0:
                     switch (col) {
-                        case 0 -> x_0_0.setVisible(true);
-                        case 1 -> x_0_1.setVisible(true);
-                        case 2 -> x_0_2.setVisible(true);
+                        case 0 -> x_0_0.setVisible(visibility);
+                        case 1 -> x_0_1.setVisible(visibility);
+                        case 2 -> x_0_2.setVisible(visibility);
                     }
                     break;
                 case 1:
                     switch (col) {
-                        case 0 -> x_1_0.setVisible(true);
-                        case 1 -> x_1_1.setVisible(true);
-                        case 2 -> x_1_2.setVisible(true);
+                        case 0 -> x_1_0.setVisible(visibility);
+                        case 1 -> x_1_1.setVisible(visibility);
+                        case 2 -> x_1_2.setVisible(visibility);
                     }
                     break;
                 case 2:
                     switch (col) {
-                        case 0 -> x_2_0.setVisible(true);
-                        case 1 -> x_2_1.setVisible(true);
-                        case 2 -> x_2_2.setVisible(true);
+                        case 0 -> x_2_0.setVisible(visibility);
+                        case 1 -> x_2_1.setVisible(visibility);
+                        case 2 -> x_2_2.setVisible(visibility);
                     }
                     break;
             }
@@ -194,7 +194,12 @@ public class GameController {
     }
 
     public void resetField(){
-        Platform.runLater(() -> application.switchToGame());
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                showClickedField(1, i, j, false);
+                showClickedField(2, i, j, false);
+            }
+        }
     }
 
     public GameModel getModel() {
