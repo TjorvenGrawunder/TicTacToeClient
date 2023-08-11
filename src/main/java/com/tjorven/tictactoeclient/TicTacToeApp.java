@@ -51,6 +51,10 @@ public class TicTacToeApp extends Application {
         return START_Y;
     }
 
+    public Stage getMainStage() {
+        return mainStage;
+    }
+
     public static void main(String[] args) {
         launch();
     }

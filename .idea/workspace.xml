@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Added Restart and Quit Button, quit not implemented and restart does not work." />
+    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Fixed Restart Button">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeApp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,6 +108,8 @@
       <workItem from="1691493995312" duration="2863000" />
       <workItem from="1691506591224" duration="347000" />
       <workItem from="1691583963746" duration="1442000" />
+      <workItem from="1691604825323" duration="353000" />
+      <workItem from="1691751523007" duration="1103000" />
     </task>
     <task id="LOCAL-00001" summary="Server parsing implemented. Started Client function">
       <created>1690479251130</created>
@@ -160,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691585391835</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed Restart Button">
+      <created>1691605079844</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1691605079844</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +200,7 @@
     <MESSAGE value="Player ID for every Client" />
     <MESSAGE value="Manchmal denkt man, dass man ne Eingebung hat, aber dann hat man doch keine. #Bruch" />
     <MESSAGE value="Added Restart and Quit Button, quit not implemented and restart does not work." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Restart and Quit Button, quit not implemented and restart does not work." />
+    <MESSAGE value="Fixed Restart Button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Restart Button" />
   </component>
 </project>

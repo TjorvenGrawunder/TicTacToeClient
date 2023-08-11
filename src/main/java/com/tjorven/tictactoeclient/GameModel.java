@@ -39,6 +39,11 @@ public class GameModel{
         msgChannel = client.getMsgChannel();
         msgChannel.writeAndFlush("restart");
     }
+    public void quit(){
+        msgChannel = client.getMsgChannel();
+        msgChannel.close();
+        msgChannel.disconnect();
+    }
 
     public void interpret(String msg){
         String[] msgParts = msg.split(",");

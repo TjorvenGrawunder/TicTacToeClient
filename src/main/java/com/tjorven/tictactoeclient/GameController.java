@@ -11,6 +11,8 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
+
 public class GameController {
 
 
@@ -89,7 +91,12 @@ public class GameController {
     }
     @FXML
     public void quitGame(ActionEvent actionEvent) {
-
+        model.quit();
+        try {
+            application.start(application.getMainStage());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
