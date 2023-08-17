@@ -5,6 +5,8 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.http.HttpRequestDecoder;
+import io.netty.handler.codec.http.HttpRequestEncoder;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
@@ -13,6 +15,7 @@ public class TicTacToeClient implements Runnable{
     private final int PORT;
     private Channel msgChannel;
     private GameModel model;
+
 
     public TicTacToeClient(String host, int port){
         this.HOST = host;
@@ -30,7 +33,10 @@ public class TicTacToeClient implements Runnable{
             b.handler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 protected void initChannel(SocketChannel socketChannel) {
-                    socketChannel.pipeline().addLast(new StringDecoder(), new StringEncoder(),new TicTacToeClientHandler(model));
+                    socketChannel.pipeline().addLast(
+                            new StringDecoder(),
+                            new StringEncoder(),
+                            new TicTacToeClientHandler(model));
                 }
             });
 

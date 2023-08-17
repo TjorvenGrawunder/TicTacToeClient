@@ -1,6 +1,11 @@
 package com.tjorven.tictactoeclient;
 
 import io.netty.channel.Channel;
+import io.netty.handler.codec.DecoderResult;
+import io.netty.handler.codec.http.HttpHeaders;
+import io.netty.handler.codec.http.HttpMethod;
+import io.netty.handler.codec.http.HttpRequest;
+import io.netty.handler.codec.http.HttpVersion;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,6 +37,7 @@ public class GameModel{
         int row = (int) y / (currentYSize / 3);
 
         msgChannel = client.getMsgChannel();
+
         msgChannel.writeAndFlush("clickedOn," + row + "," + col + "," + yourPlayer);
     }
 
