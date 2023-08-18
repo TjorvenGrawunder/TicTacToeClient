@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Implemented Quit Button">
+    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Änderungen rückgängig gemacht">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +18,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="module-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -52,7 +51,20 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.TicTacToeApp">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tjorven.tictactoeclient.Main" />
+      <module name="TicTacToeOnline" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tjorven.tictactoeclient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TicTacToeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.tjorven.tictactoeclient.TicTacToeApp" />
       <module name="TicTacToeOnline" />
@@ -79,9 +91,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TicTacToeStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tjorven.tictactoeclient.TicTacToeStart" />
+      <module name="TicTacToeOnline" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tjorven.tictactoeclient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TicTacToeApp" />
+        <item itemvalue="Application.TicTacToeStart" />
         <item itemvalue="Application.TicTacToeClient" />
       </list>
     </recent_temporary>
@@ -111,7 +138,8 @@
       <workItem from="1691583963746" duration="1442000" />
       <workItem from="1691604825323" duration="353000" />
       <workItem from="1691751523007" duration="1562000" />
-      <workItem from="1692270751895" duration="2399000" />
+      <workItem from="1692270751895" duration="3433000" />
+      <workItem from="1692283813805" duration="4788000" />
     </task>
     <task id="LOCAL-00001" summary="Server parsing implemented. Started Client function">
       <created>1690479251130</created>
@@ -183,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691752776888</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Änderungen rückgängig gemacht">
+      <created>1692273405195</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1692273405195</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +246,7 @@
     <MESSAGE value="Added Restart and Quit Button, quit not implemented and restart does not work." />
     <MESSAGE value="Fixed Restart Button" />
     <MESSAGE value="Implemented Quit Button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Quit Button" />
+    <MESSAGE value="Änderungen rückgängig gemacht" />
+    <option name="LAST_COMMIT_MESSAGE" value="Änderungen rückgängig gemacht" />
   </component>
 </project>
