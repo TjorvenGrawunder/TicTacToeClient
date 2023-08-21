@@ -10,11 +10,15 @@ import io.netty.handler.codec.http.HttpRequestEncoder;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
+import java.net.ConnectException;
+
 public class TicTacToeClient implements Runnable{
     private final String HOST;
     private final int PORT;
     private Channel msgChannel;
     private GameModel model;
+    private boolean connected = false;
+    private boolean success = false;
 
 
     public TicTacToeClient(String host, int port){
@@ -41,10 +45,22 @@ public class TicTacToeClient implements Runnable{
             });
 
             ChannelFuture f = b.connect(HOST, PORT).sync();
+            synchronized (Runtime.getRuntime()){
+                connected = true;
+                Runtime.getRuntime().notifyAll();
+            }
+            System.out.println("Test");
             msgChannel = f.channel();
 
             f.channel().closeFuture().sync();
-        } finally{
+        } catch(Exception e){
+            synchronized (Runtime.getRuntime()){
+                connected = true;
+                success = false;
+                Runtime.getRuntime().notifyAll();
+            }
+        }
+        finally{
             workerGroup.shutdownGracefully().sync();
         }
     }
@@ -54,7 +70,8 @@ public class TicTacToeClient implements Runnable{
         try {
             start();
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            //throw new RuntimeException(e);
+            System.out.println("Not Connected!");
         }
     }
 
@@ -64,5 +81,11 @@ public class TicTacToeClient implements Runnable{
 
     public void setModel(GameModel model) {
         this.model = model;
+    }
+    public boolean getConnected(){
+        return connected;
+    }
+    public boolean getSuccess(){
+        return success;
     }
 }
