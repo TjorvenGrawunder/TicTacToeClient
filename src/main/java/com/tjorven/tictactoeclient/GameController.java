@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
@@ -18,6 +19,7 @@ public class GameController {
 
     public Button restartButton;
     public Button quitButton;
+    public Button getPlayerButton;
     private GameModel model = new GameModel(TicTacToeApp.getSTART_X(), TicTacToeApp.getSTART_Y(), this);
 
     private TicTacToeApp application;
@@ -41,23 +43,23 @@ public class GameController {
     @FXML
     private Circle circle_2_2;
     @FXML
-    private Text x_0_0;
+    private Pane x_0_0;
     @FXML
-    private Text x_1_0;
+    private Pane x_1_0;
     @FXML
-    private Text x_2_0;
+    private Pane x_2_0;
     @FXML
-    private Text x_0_1;
+    private Pane x_0_1;
     @FXML
-    private Text x_1_1;
+    private Pane x_1_1;
     @FXML
-    private Text x_2_1;
+    private Pane x_2_1;
     @FXML
-    private Text x_0_2;
+    private Pane x_0_2;
     @FXML
-    private Text x_1_2;
+    private Pane x_1_2;
     @FXML
-    private Text x_2_2;
+    private Pane x_2_2;
     @FXML
     private Line right_left_0;
     @FXML
@@ -82,12 +84,17 @@ public class GameController {
     public void fieldClicked(javafx.scene.input.MouseEvent mouseEvent) {
         double x = mouseEvent.getX();
         double y = mouseEvent.getY();
+        System.out.println(x + "," + y);
         model.makeMove(x, y);
 
     }
     @FXML
     public void restartGame(ActionEvent actionEvent) {
         model.restart();
+    }
+    @FXML
+    public void playerRequest(ActionEvent actionEvent) {
+        model.playerRequest();
     }
     @FXML
     public void quitGame(ActionEvent actionEvent) {
@@ -220,7 +227,4 @@ public class GameController {
     public void setClient(TicTacToeClient client) {
         this.client = client;
     }
-
-
-
 }

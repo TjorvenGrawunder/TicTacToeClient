@@ -16,9 +16,11 @@ public class TicTacToeClient implements Runnable{
     private final String HOST;
     private final int PORT;
     private Channel msgChannel;
-    private GameModel model;
     private boolean connected = false;
     private boolean success = false;
+
+    private TicTacToeClientHandler clientHandler = new TicTacToeClientHandler();
+    private ChannelInitializerGetHandler initializer = new ChannelInitializerGetHandler();
 
 
     public TicTacToeClient(String host, int port){
@@ -34,19 +36,11 @@ public class TicTacToeClient implements Runnable{
             b.group(workerGroup);
             b.channel(NioSocketChannel.class);
             b.option(ChannelOption.SO_KEEPALIVE, true);
-            b.handler(new ChannelInitializer<SocketChannel>() {
-                @Override
-                protected void initChannel(SocketChannel socketChannel) {
-                    socketChannel.pipeline().addLast(
-                            new StringDecoder(),
-                            new StringEncoder(),
-                            new TicTacToeClientHandler(model));
-                }
-            });
-
+            b.handler(initializer);
             ChannelFuture f = b.connect(HOST, PORT).sync();
             synchronized (Runtime.getRuntime()){
                 connected = true;
+                success = true;
                 Runtime.getRuntime().notifyAll();
             }
             System.out.println("Test");
@@ -79,13 +73,17 @@ public class TicTacToeClient implements Runnable{
         return msgChannel;
     }
 
-    public void setModel(GameModel model) {
-        this.model = model;
-    }
     public boolean getConnected(){
         return connected;
     }
     public boolean getSuccess(){
         return success;
+    }
+
+    public TicTacToeClientHandler getClientHandler() {
+        return clientHandler;
+    }
+    public void setHandlerModel(GameModel model){
+        this.initializer.getHandler().setModel(model);
     }
 }

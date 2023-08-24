@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Used Maven Shade Plugin to make a jar">
+    <list default="true" id="df92aabc-97d9-4520-922b-731a2e884658" name="Changes" comment="Bugfix: Fixed connecting while no server is available">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/ChannelInitializerGetHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tjorven/tictactoeclient/TicTacToeClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/gamepanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tjorven/tictactoeclient/gamepanel.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +146,7 @@
       <workItem from="1692270751895" duration="3433000" />
       <workItem from="1692283813805" duration="5849000" />
       <workItem from="1692607088566" duration="1973000" />
-      <workItem from="1692609299639" duration="2950000" />
+      <workItem from="1692609299639" duration="17158000" />
     </task>
     <task id="LOCAL-00001" summary="Server parsing implemented. Started Client function">
       <created>1690479251130</created>
@@ -229,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692347204923</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Bugfix: Fixed connecting while no server is available">
+      <created>1692621737837</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1692621737837</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +269,7 @@
     <MESSAGE value="Implemented Quit Button" />
     <MESSAGE value="Änderungen rückgängig gemacht" />
     <MESSAGE value="Used Maven Shade Plugin to make a jar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Used Maven Shade Plugin to make a jar" />
+    <MESSAGE value="Bugfix: Fixed connecting while no server is available" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix: Fixed connecting while no server is available" />
   </component>
 </project>

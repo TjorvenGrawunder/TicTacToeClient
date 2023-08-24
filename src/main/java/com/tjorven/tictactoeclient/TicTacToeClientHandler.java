@@ -7,10 +7,6 @@ public class TicTacToeClientHandler extends ChannelInboundHandlerAdapter {
 
     GameModel model;
 
-    public TicTacToeClientHandler(GameModel model) {
-        super();
-        this.model = model;
-    }
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {

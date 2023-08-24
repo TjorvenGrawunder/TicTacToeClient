@@ -45,6 +45,10 @@ public class GameModel{
         msgChannel = client.getMsgChannel();
         msgChannel.writeAndFlush("restart");
     }
+    public void playerRequest(){
+        msgChannel = client.getMsgChannel();
+        msgChannel.writeAndFlush("playerRequest");
+    }
     public void quit(){
         msgChannel = client.getMsgChannel();
         msgChannel.close();

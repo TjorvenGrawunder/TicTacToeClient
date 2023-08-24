@@ -3,7 +3,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 
 <SplitPane dividerPositions="0.5" orientation="VERTICAL" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tjorven.tictactoeclient.GameController">
    <items>
@@ -13,7 +12,7 @@
             <HBox styleClass="segmented-button-bar">
                 <Button fx:id="restartButton" onAction="#restartGame" styleClass="first" text="Restart" />
                 <Button fx:id="quitButton" onAction="#quitGame" text="Quit" />
-                <Button text="Button3" />
+                <Button fx:id="getPlayerButton" onAction="#playerRequest" text="Get Player" />
                 <Button styleClass="last" text="Button4" />
 
             </HBox>
@@ -31,32 +30,59 @@
           <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-             <Circle fx:id="circle_0_0" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" visible="false" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-             <Circle fx:id="circle_1_0" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-             <Circle fx:id="circle_2_0" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-             <Circle fx:id="circle_0_1" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" visible="false" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-             <Circle fx:id="circle_1_1" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-             <Circle fx:id="circle_2_1" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-             <Circle fx:id="circle_0_2" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" visible="false" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-             <Circle fx:id="circle_1_2" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-             <Circle fx:id="circle_2_2" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-            <Text scaleX="10.0" scaleY="10.0" scaleZ="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" textOrigin="CENTER" visible="false" wrappingWidth="7.078125" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" fx:id="x_0_0" />
-            <Text layoutX="74.0" layoutY="77.0" scaleX="10.0" scaleY="10.0" scaleZ="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" textOrigin="CENTER" visible="false" wrappingWidth="7.078125" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" fx:id="x_1_0" />
-            <Text layoutX="207.0" layoutY="77.0" scaleX="10.0" scaleY="10.0" scaleZ="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" textOrigin="CENTER" visible="false" wrappingWidth="7.078125" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" fx:id="x_2_0" />
-            <Text layoutX="340.0" layoutY="77.0" scaleX="10.0" scaleY="10.0" scaleZ="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" textOrigin="CENTER" visible="false" wrappingWidth="7.078125" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" fx:id="x_0_1" />
-            <Text layoutX="74.0" layoutY="210.0" scaleX="10.0" scaleY="10.0" scaleZ="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" textOrigin="CENTER" visible="false" wrappingWidth="7.078125" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" fx:id="x_1_1" />
-            <Text layoutX="207.0" layoutY="210.0" scaleX="10.0" scaleY="10.0" scaleZ="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" textOrigin="CENTER" visible="false" wrappingWidth="7.078125" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" fx:id="x_2_1" />
-            <Text layoutX="340.0" layoutY="210.0" scaleX="10.0" scaleY="10.0" scaleZ="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" textOrigin="CENTER" visible="false" wrappingWidth="7.078125" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" fx:id="x_0_2" />
-            <Text layoutX="74.0" layoutY="343.0" scaleX="10.0" scaleY="10.0" scaleZ="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" textOrigin="CENTER" visible="false" wrappingWidth="7.078125" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" fx:id="x_1_2" />
-            <Text layoutX="207.0" layoutY="343.0" scaleX="10.0" scaleY="10.0" scaleZ="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" textOrigin="CENTER" visible="false" wrappingWidth="7.078125" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" fx:id="x_2_2" />
-            <Line fx:id="right_left_0" endX="150.0" startX="-150.0" strokeWidth="5.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Line fx:id="right_left_1" endX="150.0" layoutX="211.0" layoutY="78.0" startX="-150.0" strokeWidth="5.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Line fx:id="right_left_2" endX="150.0" layoutX="211.0" layoutY="211.0" startX="-150.0" strokeWidth="5.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Line fx:id="up_down_0" endX="150.0" layoutX="211.0" layoutY="344.0" rotate="90.0" startX="-150.0" strokeWidth="5.0" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Line fx:id="up_down_1" endX="150.0" layoutX="78.0" layoutY="211.0" rotate="90.0" startX="-150.0" strokeWidth="5.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-               <Line fx:id="up_down_2" endX="150.0" layoutX="211.0" layoutY="211.0" rotate="90.0" startX="-150.0" strokeWidth="5.0" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Line fx:id="dia_0" endX="200.0" layoutX="344.0" layoutY="211.0" rotate="45.0" startX="-200.0" strokeWidth="5.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Line fx:id="dia_1" endX="200.0" layoutX="211.0" layoutY="211.0" rotate="-45.0" startX="-200.0" strokeWidth="5.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+             <Circle fx:id="circle_0_0" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="4.0" visible="false" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+             <Circle fx:id="circle_1_0" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="4.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+             <Circle fx:id="circle_2_0" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="4.0" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+             <Circle fx:id="circle_0_1" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="4.0" visible="false" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+             <Circle fx:id="circle_1_1" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="4.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+             <Circle fx:id="circle_2_1" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="4.0" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+             <Circle fx:id="circle_0_2" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="4.0" visible="false" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+             <Circle fx:id="circle_1_2" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="4.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+             <Circle fx:id="circle_2_2" fill="WHITE" radius="50.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="4.0" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+             <Pane prefHeight="200" prefWidth="200" visible="false" GridPane.halignment="CENTER" GridPane.valignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:id="x_0_0">
+                 <Line endX="150.0" endY="150.0" startX="50.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+                 <Line endX="50.0" endY="150.0" startX="150.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+             </Pane>
+             <Pane prefHeight="200" prefWidth="200" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:id="x_1_0">
+                 <Line endX="150.0" endY="150.0" startX="50.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+                 <Line endX="50.0" endY="150.0" startX="150.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+             </Pane>
+             <Pane prefHeight="200" prefWidth="200" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:id="x_2_0">
+                 <Line endX="150.0" endY="150.0" startX="50.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+                 <Line endX="50.0" endY="150.0" startX="150.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+             </Pane>
+             <Pane prefHeight="200" prefWidth="200" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:id="x_0_1">
+                 <Line endX="150.0" endY="150.0" startX="50.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+                 <Line endX="50.0" endY="150.0" startX="150.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+             </Pane>
+             <Pane prefHeight="200" prefWidth="200" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:id="x_1_1">
+                 <Line endX="150.0" endY="150.0" startX="50.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+                 <Line endX="50.0" endY="150.0" startX="150.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+             </Pane>
+             <Pane prefHeight="200" prefWidth="200" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:id="x_2_1">
+                 <Line endX="150.0" endY="150.0" startX="50.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+                 <Line endX="50.0" endY="150.0" startX="150.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+             </Pane>
+             <Pane prefHeight="200" prefWidth="200" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:id="x_0_2">
+                 <Line endX="150.0" endY="150.0" startX="50.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+                 <Line endX="50.0" endY="150.0" startX="150.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+             </Pane>
+             <Pane prefHeight="200" prefWidth="200" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:id="x_1_2">
+                 <Line endX="150.0" endY="150.0" startX="50.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+                 <Line endX="50.0" endY="150.0" startX="150.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+             </Pane>
+             <Pane prefHeight="200" prefWidth="200" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:id="x_2_2">
+                 <Line endX="150.0" endY="150.0" startX="50.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+                 <Line endX="50.0" endY="150.0" startX="150.0" startY="50.0" strokeWidth="4.0" translateX="-33.0" translateY="-33.0" />
+             </Pane>
+             <Line fx:id="right_left_0" endX="150.0" startX="-150.0" strokeWidth="6.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+             <Line fx:id="right_left_1" endX="150.0" layoutX="211.0" layoutY="78.0" startX="-150.0" strokeWidth="6.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+             <Line fx:id="right_left_2" endX="150.0" layoutX="211.0" layoutY="211.0" startX="-150.0" strokeWidth="6.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+             <Line fx:id="up_down_0" endX="150.0" layoutX="211.0" layoutY="344.0" rotate="90.0" startX="-150.0" strokeWidth="6.0" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+             <Line fx:id="up_down_1" endX="150.0" layoutX="78.0" layoutY="211.0" rotate="90.0" startX="-150.0" strokeWidth="6.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+             <Line fx:id="up_down_2" endX="150.0" layoutX="211.0" layoutY="211.0" rotate="90.0" startX="-150.0" strokeWidth="6.0" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+             <Line fx:id="dia_0" endX="200.0" layoutX="344.0" layoutY="211.0" rotate="45.0" startX="-200.0" strokeWidth="6.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+             <Line fx:id="dia_1" endX="200.0" layoutX="211.0" layoutY="211.0" rotate="-45.0" startX="-200.0" strokeWidth="6.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
    </items>

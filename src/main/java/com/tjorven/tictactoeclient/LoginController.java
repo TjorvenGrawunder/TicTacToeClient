@@ -31,7 +31,7 @@ public class LoginController {
             GameController gameController = application.switchToGame();
             gameController.getModel().setClient(client);
             gameController.setApplication(application);
-            client.setModel(gameController.getModel());
+            client.setHandlerModel(gameController.getModel());
         }else{
             Platform.runLater(() -> {
                 Alert winnerAlert = new Alert(Alert.AlertType.ERROR);
