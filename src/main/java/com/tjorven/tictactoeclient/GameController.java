@@ -86,7 +86,6 @@ public class GameController {
         double y = mouseEvent.getY();
         System.out.println(x + "," + y);
         model.makeMove(x, y);
-
     }
     @FXML
     public void restartGame(ActionEvent actionEvent) {
@@ -116,7 +115,7 @@ public class GameController {
                 winnerAlert.setContentText("Es gibt keinen Sieger!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             }else{
                 winnerAlert.setContentText("Der Sieger ist Spieler " + winner);
-                showLine(line);
+                showLine(line, true);
             }
 
             winnerAlert.show();
@@ -178,36 +177,23 @@ public class GameController {
         }
     }
 
-    private void showLine(int line){
-        switch (line){
-            case 0:
-                right_left_0.setVisible(true);
-                break;
-            case 1:
-                right_left_1.setVisible(true);
-                break;
-            case 2:
-                right_left_2.setVisible(true);
-                break;
-            case 3:
-                up_down_0.setVisible(true);
-                break;
-            case 4:
-                up_down_1.setVisible(true);
-                break;
-            case 5:
-                up_down_2.setVisible(true);
-                break;
-            case 6:
-                dia_0.setVisible(true);
-                break;
-            case 7:
-                dia_1.setVisible(true);
-                break;
+    private void showLine(int line, boolean visibility){
+        switch (line) {
+            case 0 -> right_left_0.setVisible(visibility);
+            case 1 -> right_left_1.setVisible(visibility);
+            case 2 -> right_left_2.setVisible(visibility);
+            case 3 -> up_down_0.setVisible(visibility);
+            case 4 -> up_down_1.setVisible(visibility);
+            case 5 -> up_down_2.setVisible(visibility);
+            case 6 -> dia_0.setVisible(visibility);
+            case 7 -> dia_1.setVisible(visibility);
         }
     }
 
     public void resetField(){
+        for(int i = 0; i < 8; i++){
+            showLine(i, false);
+        }
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
                 showClickedField(1, i, j, false);
@@ -224,7 +210,4 @@ public class GameController {
         this.application = application;
     }
 
-    public void setClient(TicTacToeClient client) {
-        this.client = client;
-    }
 }

@@ -19,8 +19,7 @@ public class TicTacToeClient implements Runnable{
     private boolean connected = false;
     private boolean success = false;
 
-    private TicTacToeClientHandler clientHandler = new TicTacToeClientHandler();
-    private ChannelInitializerGetHandler initializer = new ChannelInitializerGetHandler();
+    private final ChannelInitializerGetHandler initializer = new ChannelInitializerGetHandler();
 
 
     public TicTacToeClient(String host, int port){
@@ -80,9 +79,6 @@ public class TicTacToeClient implements Runnable{
         return success;
     }
 
-    public TicTacToeClientHandler getClientHandler() {
-        return clientHandler;
-    }
     public void setHandlerModel(GameModel model){
         this.initializer.getHandler().setModel(model);
     }
